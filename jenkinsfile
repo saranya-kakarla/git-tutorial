@@ -1,1 +1,20 @@
-
+pipeline {
+agent any
+stages{
+stage("build"){
+steps{
+echo "this is build step"
+}
+}
+stage("test"){
+steps{
+sh "bash test.sh"
+}
+}
+stage("deploy"){
+steps {
+echo "successfully deployed"
+}
+}
+}
+}
